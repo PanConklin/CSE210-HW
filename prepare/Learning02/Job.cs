@@ -5,7 +5,7 @@ public class Job
     private int _startYear;
     private int _endYear;
 
-    public Job(string jobTitle, string company, int startYear, int endYear)
+    public Job(string company, string jobTitle, int startYear, int endYear)
     {
         _company = company;
         _jobTitle = jobTitle;
