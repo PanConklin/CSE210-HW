@@ -1,20 +1,28 @@
 public class Entry
 {
-    private string _prompt; //rand prompt from prompt class
-    private string _date;
-    private string _emotion;
-    private string _dailyQuote;
+    private string _randomPrompt = "";
 
-    public Entry(string prompt, string date, string emotion, string dailyQuote)
+    private string _promptAnswer = "";
+
+    string _date = "";
+
+    public Entry(string randomPrompt, string promptAnswer)
     {
-        _prompt = prompt;
-        _date = date;
-        _emotion = emotion;
-        _dailyQuote = dailyQuote;
+        _randomPrompt = randomPrompt;
+        _promptAnswer = promptAnswer;
+        _date = GetDate();
     }
 
-    public void WriteEntry()
+    public string GetDate()
     {
-
+        DateTime _date = DateTime.Now;
+        string entryDate = _date.ToShortDateString();
+        return entryDate;
     }
+
+    public string DisplayEntries()
+    {
+        return $"{_randomPrompt}\n{_promptAnswer}\n{GetDate()}";
+    }
+
 }

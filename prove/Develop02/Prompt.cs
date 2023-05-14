@@ -1,24 +1,26 @@
 public class Prompt
 {
-
-    List<string> _prompts = new List<string>();
-
-    public Prompt()
+    public List<string> _promptList = new List<string>()
     {
+        "Who was the most interesting person I interacted with today?",
+        "What was the best part of my day?",
+        "How did I see the hand of the Lord in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I had one thing I could do over today, what would it be?"
+    };
 
-    }
+    private string _prompt = "";
+    DateTime _date = DateTime.Now;
+    //string _date = _date.ToShortDateString();
 
-    public string PickRandPrompt() //gets random prompt from list _prompts
+    private string _response = "";
+
+    public string GetRandomPrompt()
     {
-        return "This is the prompt";
-        //Console.Write($"*************");
+        var random = new Random();
+        var randomNumber = random.Next(0, _promptList.Count);
+        string randomPrompt = _promptList[randomNumber];
+        return randomPrompt;
     }
-
-    public void AddPrompt() //inserts Prompt into entry
-    {
-
-    }
-
-
 
 }
